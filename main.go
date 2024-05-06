@@ -54,7 +54,7 @@ func slashCommandHandler(w http.ResponseWriter, r *http.Request) {
 		n := rand.Int() % len(opts)
 		winner := opts[n]
 
-		response := fmt.Sprintf("Hold on tight, we're spinning the wheel!\n\n And the winner is\n *%v*", winner)
+		response := fmt.Sprintf("Hold on tight, *%v* is spinning the wheel! The choices are:\n*%v*\n\n And the winner is\n *%v*", s.UserName, opts, winner)
 		w.Write([]byte(response))
 	default:
 		w.WriteHeader(http.StatusInternalServerError)
