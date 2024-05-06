@@ -13,24 +13,6 @@ import (
 	"github.com/slack-go/slack"
 )
 
-// APIResponse maps to the JSON response from the Open Weather Map API
-type APIResponse struct {
-	Summary []struct {
-		ID          int    `json:"id"`
-		Main        string `json:"main"`
-		Description string `json:"description"`
-		Icon        string `json:"icon"`
-	} `json:"weather"`
-	Weather struct {
-		Temp     float64 `json:"temp"`
-		Humidity int     `json:"humidity"`
-		Pressure int     `json:"pressure"`
-		TempMin  float64 `json:"temp_min"`
-		TempMax  float64 `json:"temp_max"`
-	} `json:"main"`
-	Location string `json:"name"`
-}
-
 func main() {
 	// Load environment variables
 	err := godotenv.Load(".env")
